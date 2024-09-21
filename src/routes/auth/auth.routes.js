@@ -90,7 +90,7 @@ authRouter.post("/login", async (req, res) => {
 
     // Generate a JWT and send it in the response
     const token = generateToken(user);
-    res.json({ token });
+    return res.json({ token });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server Error. Please try again later" });
